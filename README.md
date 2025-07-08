@@ -21,10 +21,17 @@ pip install -r requirements.txt
 
 ### 2. Configure Environment
 
-The `.env` file has been pre-configured with your Azure OpenAI credentials:
-- Endpoint: `https://caai-test-openai-swedencentral.openai.azure.com`
-- Model: `o3-pro`
-- API Key: (included)
+Copy the example environment file and configure your Azure OpenAI credentials:
+
+```bash
+cp .env.example .env
+```
+
+Edit the `.env` file with your actual Azure OpenAI credentials:
+- Set your Azure OpenAI endpoint
+- Add your API key
+- Configure the model name (o3-pro)
+- Set the API version
 
 ### 3. Run the Application
 
@@ -57,7 +64,8 @@ The application will open in your default web browser at `http://localhost:8501`
 o3-pro/
 ├── app.py              # Main Streamlit application
 ├── requirements.txt    # Python dependencies
-├── .env               # Environment variables (credentials)
+├── .env.example       # Environment variables template
+├── .env               # Environment variables (create from .env.example)
 └── README.md          # This file
 ```
 
@@ -87,9 +95,11 @@ The application includes comprehensive error handling:
 
 ## Security Notes
 
-- API credentials are stored in `.env` file
+- API credentials are stored in `.env` file (not included in repository)
+- Copy `.env.example` to `.env` and add your credentials
 - Never commit `.env` file to version control
 - Keep your API key secure and rotate it regularly
+- The `.env` file is excluded via `.gitignore`
 
 ## Customization
 
